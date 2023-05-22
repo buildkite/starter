@@ -1,5 +1,5 @@
 name: "Starter pipeline"
-description: "An example pipeline for launching a rocket to show how Buildkite works."
+description: "An example pipeline for launching a rocket that shows how Buildkite works."
 emoji: ":rocket:"
 tags: ["Example", ":rocket:"]
 steps:
