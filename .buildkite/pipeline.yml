@@ -8,6 +8,11 @@ steps:
     key: test
     depends_on: build
 
+  - label: ":test_tube: Test Dagger"
+    command: echo "Test Dagger"
+    key: test
+    depends_on: build
+
   - label: ":rocket: Deploy"
     command: |
       echo "Launch the rocket"
