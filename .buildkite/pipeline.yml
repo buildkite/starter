@@ -3,6 +3,10 @@ steps:
     command: echo "Build the rocket"
     key: build
 
+  - label: "Example Sorcha Test"
+    command: echo "Hello Sorcha!"
+    depends_on: build
+
   - label: ":white_check_mark: Test"
     command: echo "Test the rocket"
     key: test
