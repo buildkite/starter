@@ -1,7 +1,11 @@
 steps:
-  # - label: "language check"
-  #   command: echo "Watch your damn launguage!" | buildkite-agent annotate --style "warning"
-  #   if: build.message =~ /.*fuck.*/
+  steps:
+  - label: "language check"
+    command: echo "Watch your damn launguage!" | buildkite-agent annotate --style "warning"
+    if: build.message =~ /.*fuck.*/
+    plugins:
+      - docker#v5.10.0:
+          image: "artifactory.build.ue1.snooguts.net/reddit-docker-prod/android-dangerjs:2.0.0"
 
   - label: ":construction_worker: Build"
     command: echo "Build the rocket"
@@ -12,6 +16,6 @@ steps:
     key: test
     depends_on: build
 
-  # - label: "Dynamic Last Step"
-  #   command: .buildkite/generate-moar-steps.sh | buildkite-agent pipeline upload
-  #   key: deploy
+  - label: "Dynamic Last Step"
+    command: .buildkite/generate-moar-steps.sh | buildkite-agent pipeline upload
+    key: deploy
