@@ -11,7 +11,7 @@ steps:
     key: build
     plugins:
       - docker#v5.10.0:
-          image: "artifactory.build.ue1.snooguts.net/reddit-docker-prod/android-dangerjs:2.0.0"
+          image: "golang:1.11"
 
   - label: ":white_check_mark: Test"
     command: echo "Test the rocket"
